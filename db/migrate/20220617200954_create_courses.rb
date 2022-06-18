@@ -7,6 +7,8 @@ class CreateCourses < ActiveRecord::Migration[6.1]
       t.integer :price
       t.integer :rating
       t.string :skill_level
+      t.integer :teacher_id
+      t.integer :student_id
 
       t.timestamps
     end

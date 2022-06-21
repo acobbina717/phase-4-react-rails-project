@@ -14,6 +14,8 @@
     "@mantine/core": "^4.2.10",
     "@mantine/hooks": "^4.2.10",
     "@mantine/modals": "^4.2.10",
-    "react-router-dom": "^5.3.3"
+    "@tabler/icons": "^1.71.0",
+    "react-router-dom": "^5.3.3",
+    "tabler-icons-react": "^1.50.0"
   }
 }

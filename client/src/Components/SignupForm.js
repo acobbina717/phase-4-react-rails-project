@@ -40,8 +40,6 @@ const SignupForm = ({ signupUrl }) => {
     form.reset();
   });
 
-  console.log(errors);
-
   return (
     <Box sx={{ maxWidth: 300 }} mx="auto">
       <form onSubmit={handleSubmit}>

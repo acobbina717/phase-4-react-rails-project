@@ -12,6 +12,7 @@ import StudentAuthPage from "./Components/StudentAuthPage";
 function App() {
   const [signupUrl, setSignUpUrl] = useState("");
   const navigate = useNavigate();
+
   return (
     <div className="App">
       <Routes>

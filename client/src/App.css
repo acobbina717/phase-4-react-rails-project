@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.burger-icon {
+  position: absolute;
+  height: 40px;
+  top: 1%;
+  left: 1%;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 20%;
+  /* transition: all 0.2s ease-in-out; */
+  /* background: rgba(255, 255, 255, 0.2); */
+}

@@ -7,11 +7,9 @@ import {
   PasswordInput,
   Group,
 } from "@mantine/core";
-import { useNavigate } from "react-router-dom";
 
 // initial form state values
-const LoginForm = () => {
-  const navigate = useNavigate();
+const LoginForm = ({ authUser, history }) => {
   const [errors, setErrors] = useState([]);
 
   const form = useForm({
@@ -29,7 +27,10 @@ const LoginForm = () => {
       body: JSON.stringify(values),
     }).then((res) => {
       if (res.ok) {
-        res.json().then(navigate("/home"));
+        res.json().then(() => {
+          authUser();
+          history.push("/home");
+        });
       } else {
         res.json().then((res) => setErrors(res.error));
       }

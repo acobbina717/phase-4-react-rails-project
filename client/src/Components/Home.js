@@ -1,8 +1,13 @@
 import React, { useReducer, useState } from "react";
 import NavBar from "./NavBar";
-import { Burger, Menu, Avatar } from "@mantine/core";
+import { Burger } from "@mantine/core";
 import ProfileMenu from "./ProfileMenu";
-const Home = () => {
+import CourseList from "./CourseList";
+import Carousel from "./Carousel";
+import CarouselItem from "./CarouselItem";
+import MyCourses from "./MyCourses";
+
+const Home = ({ courses, handleLogout }) => {
   //
   function reducer(state, action) {
     switch (action.type) {
@@ -33,8 +38,8 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <ProfileMenu />
+    <div className="nav">
+      <ProfileMenu handleLogout={handleLogout} />
       <Burger
         opened={opened}
         onClick={burgerClick}
@@ -45,8 +50,9 @@ const Home = () => {
           },
         })}
       />
-
       <NavBar animation={animation} visible={visible} />
+      {/* <MyCourses courses={courses} /> */}
+      <CourseList courses={courses} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+skip_before_action :authorized, only: [:create]
 
   def show 
     teacher = find_teacher
@@ -7,6 +8,7 @@ class TeachersController < ApplicationController
 
   def create
     teacher = Teacher.create!(teacher_params)
+    session[:user_id] = teacher.id
     render json: teacher, status: 201
   end
 

@@ -1,11 +1,12 @@
 import React from "react";
 import LoginForm from "./LoginForm";
+import BackButton from "./BackButton";
 
-const LoginPage = ({ navigate }) => {
+const LoginPage = ({ authUser, history }) => {
   return (
     <div>
-      <LoginForm />
-      <button onClick={() => navigate(-1)}>Back</button>
+      <BackButton history={history} />
+      <LoginForm authUser={authUser} history={history} />
     </div>
   );
 };

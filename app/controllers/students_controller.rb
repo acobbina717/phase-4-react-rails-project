@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
-  
+  skip_before_action :authorized, only: [:create]
+
   def show 
     student = find_student
     render json: student, status: 200
